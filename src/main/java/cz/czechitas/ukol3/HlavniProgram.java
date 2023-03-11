@@ -1,5 +1,10 @@
 package cz.czechitas.ukol3;
 
+import cz.czechitas.ukol3.model.Disk;
+import cz.czechitas.ukol3.model.Pamet;
+import cz.czechitas.ukol3.model.Pocitac;
+import cz.czechitas.ukol3.model.Procesor;
+
 /**
  * Spouštěcí třída celého programu
  */
@@ -14,18 +19,18 @@ public class HlavniProgram {
         laptopLenovo.zapniSe();
 
 
-        Disk lenovoDisk = new Disk ();
+        Disk lenovoDisk = new Disk();
         lenovoDisk.setKapacita(477_000_000_000L);
         lenovoDisk.setVyuziteMisto(201_000_000_000L);
 
-        Pamet lenovoPamet = new Pamet ();
+        Pamet lenovoPamet = new Pamet();
         lenovoPamet.setKapacita(8_000_000_000L);
 
-        Procesor lenovoProcesor = new Procesor ();
+        Procesor lenovoProcesor = new Procesor();
         lenovoProcesor.setVyrobce("Lenovo");
         lenovoProcesor.setRychlost(2_300_000_000L);
 
-        laptopLenovo.setCpu (lenovoProcesor);
+        laptopLenovo.setCpu(lenovoProcesor);
         laptopLenovo.setPevnyDisk(lenovoDisk);
         laptopLenovo.setRam(lenovoPamet);
 
@@ -33,7 +38,6 @@ public class HlavniProgram {
         laptopLenovo.zapniSe();
 
         laptopLenovo.vypniSe();
-
 
 
     }

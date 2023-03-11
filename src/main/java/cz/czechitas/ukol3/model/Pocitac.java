@@ -1,4 +1,4 @@
-package cz.czechitas.ukol3;
+package cz.czechitas.ukol3.model;
 
 public class Pocitac {
     private boolean jeZapnuty;
@@ -31,8 +31,8 @@ public class Pocitac {
         this.pevnyDisk = pevnyDisk;
     }
 
-    public boolean isJeZapnuty() {
-        return this.jeZapnuty;
+    public boolean jeZapnuty() {
+        return jeZapnuty;
     }
 
     public void zapniSe() {
@@ -51,13 +51,20 @@ public class Pocitac {
     }
 
     public void vypniSe() {
+        if (jeZapnuty == true) {
+            jeZapnuty = false;
+        }
+    }
 
-            System.out.println("Počítač se vypnul.");
+    public void vytvorSouborOVelikosti(long velikost) {
 
 
     }
 
+    public void vymazSouboryOVelikosti(long velikost) {
 
+
+    }
 
     @Override
     public String toString() {
