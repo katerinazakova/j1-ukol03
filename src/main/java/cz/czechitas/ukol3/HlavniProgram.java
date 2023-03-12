@@ -19,25 +19,36 @@ public class HlavniProgram {
         laptopLenovo.zapniSe();
 
 
-        Disk lenovoDisk = new Disk();
-        lenovoDisk.setKapacita(477_000_000_000L);
-        lenovoDisk.setVyuziteMisto(201_000_000_000L);
+        Disk laptopLenovoDisk = new Disk();
+        laptopLenovoDisk.setKapacita(477_000_000_000L);
+        laptopLenovoDisk.setVyuziteMisto(201_000_000_000L);
 
-        Pamet lenovoPamet = new Pamet();
-        lenovoPamet.setKapacita(8_000_000_000L);
+        Pamet laptopLenovoPamet = new Pamet();
+        laptopLenovoPamet.setKapacita(8_000_000_000L);
 
-        Procesor lenovoProcesor = new Procesor();
-        lenovoProcesor.setVyrobce("Lenovo");
-        lenovoProcesor.setRychlost(2_300_000_000L);
+        Procesor laptopLenovoProcesor = new Procesor();
+        laptopLenovoProcesor.setVyrobce("Lenovo");
+        laptopLenovoProcesor.setRychlost(2_300_000_000L);
 
-        laptopLenovo.setCpu(lenovoProcesor);
-        laptopLenovo.setPevnyDisk(lenovoDisk);
-        laptopLenovo.setRam(lenovoPamet);
+        laptopLenovo.setCpu(laptopLenovoProcesor);
+        laptopLenovo.setPevnyDisk(laptopLenovoDisk);
+        laptopLenovo.setRam(laptopLenovoPamet);
+
 
         System.out.println(laptopLenovo);
         laptopLenovo.zapniSe();
+        laptopLenovo.vytvorSouborOVelikosti(100_000_000_000L);
+
+        laptopLenovo.vymazSouboryOVelikosti(100_000_000_000L);
+
+
+        laptopLenovo.zapniSe();
+
 
         laptopLenovo.vypniSe();
+
+        laptopLenovo.vytvorSouborOVelikosti(100_000_000_000L);
+        laptopLenovo.vymazSouboryOVelikosti(100_000_000_000L);
 
 
     }

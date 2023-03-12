@@ -6,6 +6,9 @@ public class Pocitac {
     private Procesor cpu;
     private Pamet ram;
     private Disk pevnyDisk;
+    private long kapacita;
+    private long vyuziteMisto;
+
 
     public Procesor getCpu() {
         return cpu;
@@ -31,6 +34,23 @@ public class Pocitac {
         this.pevnyDisk = pevnyDisk;
     }
 
+    public long getKapacita() {
+        return kapacita;
+    }
+
+    public void setKapacita(long kapacita) {
+        this.kapacita = kapacita;
+    }
+
+    public long getVyuziteMisto() {
+        return vyuziteMisto;
+    }
+
+    public void setVyuziteMisto(long vyuziteMisto) {
+        this.vyuziteMisto = vyuziteMisto;
+    }
+
+
     public boolean jeZapnuty() {
         return jeZapnuty;
     }
@@ -42,7 +62,7 @@ public class Pocitac {
         }
 
         if (jeZapnuty == true) {
-            System.err.println("Pocitac je jiz zapnuty");
+            System.err.println("Pocitac je jiz zapnutý.");
         } else {
             System.out.println("Pocitac se prave zapnul.");
             jeZapnuty = true;
@@ -53,18 +73,46 @@ public class Pocitac {
     public void vypniSe() {
         if (jeZapnuty == true) {
             jeZapnuty = false;
+            System.out.println("Počítač se vypnul.");
         }
+
     }
 
     public void vytvorSouborOVelikosti(long velikost) {
 
+        long novySoubor = vyuziteMisto + velikost;
+
+        if (jeZapnuty == false) {
+            return;
+        }
+        if (novySoubor < kapacita) {
+            System.out.println("Soubor vytvořen.");
+
+        } else {
+            System.err.println("Soubor nelze vytvořit.");
+
+        }
 
     }
 
     public void vymazSouboryOVelikosti(long velikost) {
 
+        long zmenseneMisto = vyuziteMisto - velikost;
+
+        if (jeZapnuty == false) {
+            return;
+
+        }
+        if (zmenseneMisto > 0) {
+            System.out.println("Soubor odstraněn.");
+
+        } else {
+            System.err.println("Soubor nelze odstranit");
+
+        }
 
     }
+
 
     @Override
     public String toString() {
