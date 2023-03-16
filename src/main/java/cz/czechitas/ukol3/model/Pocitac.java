@@ -38,8 +38,8 @@ public class Pocitac {
     }
 
     public void zapniSe() {
-        if (this.cpu == null || ram == null || pevnyDisk == null) {
-            System.err.println("Pocitac nelze zapnout bez vsech komponent.");
+        if (cpu == null || ram == null || pevnyDisk == null) {
+            System.out.println("Chyba: Pocitac nelze zapnout bez vsech komponent.");
             return;
         }
 
@@ -63,6 +63,7 @@ public class Pocitac {
     public void vytvorSouborOVelikosti(long velikost) {
 
         if (jeZapnuty == false) {
+            System.out.println("Chyba: nelze vytvářet soubory při vypnutém počítači.");
             return;
         }
 
@@ -73,7 +74,7 @@ public class Pocitac {
             pevnyDisk.setVyuziteMisto(zvetseneMisto);
             System.out.println("Soubor vytvořen.");
         } else {
-            System.err.println("Soubor nelze vytvořit.");
+            System.out.println("Chyba: Soubor nelze vytvořit - nedostatek místa.");
 
         }
 
@@ -92,7 +93,7 @@ public class Pocitac {
             System.out.println("Soubor odstraněn.");
 
         } else {
-            System.err.println("Soubor nelze odstranit");
+            System.out.println("Chyba: Soubor nelze odstranit");
 
         }
 
