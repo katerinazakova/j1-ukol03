@@ -23,6 +23,7 @@ public class HlavniProgram {
         laptopLenovoDisk.setKapacita(477_000_000_000L);
         laptopLenovoDisk.setVyuziteMisto(201_000_000_000L);
 
+
         Pamet laptopLenovoPamet = new Pamet();
         laptopLenovoPamet.setKapacita(8_000_000_000L);
 
@@ -37,14 +38,34 @@ public class HlavniProgram {
 
         System.out.println(laptopLenovo);
         laptopLenovo.zapniSe();
-        laptopLenovo.vytvorSouborOVelikosti(100_000_000_000L);
-
-        laptopLenovo.vymazSouboryOVelikosti(100_000_000_000L);
-
-
+        laptopLenovo.zapniSe();
+        laptopLenovo.zapniSe();
         laptopLenovo.zapniSe();
 
+        laptopLenovo.vytvorSouborOVelikosti(100_000_000_000L);
+        System.out.println(laptopLenovo.getPevnyDisk());
 
+        laptopLenovo.vytvorSouborOVelikosti(380_256_000_000L);
+        System.out.println(laptopLenovo.getPevnyDisk());
+
+        laptopLenovo.vymazSouboryOVelikosti(100_000_000_000L);
+        System.out.println(laptopLenovo.getPevnyDisk());
+
+        laptopLenovo.vytvorSouborOVelikosti(276_000_000_000L);
+        System.out.println(laptopLenovo.getPevnyDisk());
+
+        laptopLenovo.vytvorSouborOVelikosti(50_256_000_000L);
+        System.out.println(laptopLenovo.getPevnyDisk());
+
+        laptopLenovo.vymazSouboryOVelikosti(478_000_000_000L);
+        System.out.println(laptopLenovo.getPevnyDisk());
+
+        laptopLenovo.vymazSouboryOVelikosti(477_000_000_000L);
+        System.out.println(laptopLenovo.getPevnyDisk());
+
+
+        laptopLenovo.vypniSe();
+        laptopLenovo.vypniSe();
         laptopLenovo.vypniSe();
 
         laptopLenovo.vytvorSouborOVelikosti(100_000_000_000L);

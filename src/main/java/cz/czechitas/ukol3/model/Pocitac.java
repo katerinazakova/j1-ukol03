@@ -39,14 +39,14 @@ public class Pocitac {
 
     public void zapniSe() {
         if (cpu == null || ram == null || pevnyDisk == null) {
-            System.out.println("Chyba: Pocitac nelze zapnout bez vsech komponent.");
+            System.out.println("Chyba: počítač nelze zapnout bez všech komponent.");
             return;
         }
 
         if (jeZapnuty) {
-            System.out.println("Chyba: Pocitac je jiz zapnutý.");
+            System.out.println("Chyba: počítač je již zapnutý.");
         } else {
-            System.out.println("Pocitac se prave zapnul.");
+            System.out.println("Počítač se právě zapnul.");
             jeZapnuty = true;
         }
 
@@ -62,7 +62,7 @@ public class Pocitac {
 
     public void vytvorSouborOVelikosti(long velikost) {
 
-        if (jeZapnuty == false) {
+        if (!jeZapnuty) {
             System.out.println("Chyba: nelze vytvářet soubory při vypnutém počítači.");
             return;
         }
@@ -74,7 +74,7 @@ public class Pocitac {
             pevnyDisk.setVyuziteMisto(zvetseneMisto);
             System.out.println("Soubor vytvořen.");
         } else {
-            System.out.println("Chyba: Soubor nelze vytvořit - nedostatek místa.");
+            System.out.println("Chyba: soubor nelze vytvořit - nedostatek místa.");
 
         }
 
@@ -82,18 +82,18 @@ public class Pocitac {
 
     public void vymazSouboryOVelikosti(long velikost) {
 
-        if (jeZapnuty == false) {
+        if (!jeZapnuty) {
             return;
 
         }
-        long zmenseneMisto = pevnyDisk.getKapacita() - velikost;
+        long zmenseneMisto = pevnyDisk.getVyuziteMisto() - velikost;
 
         if (zmenseneMisto >= 0) {
             pevnyDisk.setVyuziteMisto(zmenseneMisto);
             System.out.println("Soubor odstraněn.");
 
         } else {
-            System.out.println("Chyba: Soubor nelze odstranit");
+            System.out.println("Chyba: soubor nelze odstranit");
 
         }
 
@@ -102,7 +102,7 @@ public class Pocitac {
 
     @Override
     public String toString() {
-        return "CPU: " + cpu + ". Pevný disk: " + pevnyDisk + ". RAM: " + ram + ".";
+        return "CPU: " + cpu + ". Pevný disk: " + pevnyDisk + " RAM: " + ram;
     }
 }
 

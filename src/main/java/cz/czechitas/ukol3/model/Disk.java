@@ -23,6 +23,6 @@ public class Disk {
 
     @Override
     public String toString() {
-        return "kapacita disku " + kapacita + " B, využito " + vyuziteMisto + " B";
+        return "Kapacita disku " + kapacita + " B, využito " + vyuziteMisto + " B.";
     }
 }
