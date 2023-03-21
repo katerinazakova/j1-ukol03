@@ -6,6 +6,7 @@ public class Pocitac {
     private Procesor cpu;
     private Pamet ram;
     private Disk pevnyDisk;
+    private Disk druhyDisk;
 
 
     public Procesor getCpu() {
@@ -32,6 +33,13 @@ public class Pocitac {
         this.pevnyDisk = pevnyDisk;
     }
 
+    public Disk getDruhyDisk() {
+        return druhyDisk;
+    }
+
+    public void setDruhyDisk(Disk druhyDisk) {
+        this.druhyDisk = druhyDisk;
+    }
 
     public boolean jeZapnuty() {
         return jeZapnuty;
@@ -68,14 +76,18 @@ public class Pocitac {
         }
 
         long zvetseneMisto = pevnyDisk.getVyuziteMisto() + velikost;
-
+        long zvetseneMistoDruhehoDisku = druhyDisk.getVyuziteMisto() + velikost;
 
         if (zvetseneMisto <= pevnyDisk.getKapacita()) {
             pevnyDisk.setVyuziteMisto(zvetseneMisto);
-            System.out.println("Soubor vytvořen.");
-        } else {
-            System.out.println("Chyba: soubor nelze vytvořit - nedostatek místa.");
+            System.out.println("Soubor vytvořen na pevném disku.");
 
+        } else if (zvetseneMistoDruhehoDisku <= druhyDisk.getKapacita()) {
+            druhyDisk.setVyuziteMisto(zvetseneMistoDruhehoDisku);
+            System.out.println("Soubor vytvořen na druhém disku");
+
+        } else {
+            System.out.println("Chyba: soubor nelze vytvořit - nedostatek kapacity.");
         }
 
     }
@@ -87,22 +99,26 @@ public class Pocitac {
 
         }
         long zmenseneMisto = pevnyDisk.getVyuziteMisto() - velikost;
+        long zmenseneMistoDruhehoDisku = druhyDisk.getVyuziteMisto() - velikost;
 
         if (zmenseneMisto >= 0) {
             pevnyDisk.setVyuziteMisto(zmenseneMisto);
-            System.out.println("Soubor odstraněn.");
+            System.out.println("Soubor odstraněn z pevného disku.");
+
+        } else if (zmenseneMistoDruhehoDisku >= 0) {
+            druhyDisk.setVyuziteMisto(zmenseneMistoDruhehoDisku);
+            System.out.println("Soubor odstraněn z druhého disku.");
 
         } else {
-            System.out.println("Chyba: soubor nelze odstranit");
+            System.out.println("Chyba: soubor nelze odstranit.");
 
         }
 
     }
 
-
     @Override
     public String toString() {
-        return "CPU: " + cpu + ". Pevný disk: " + pevnyDisk + " RAM: " + ram;
+        return "CPU: " + cpu + ". Pevný disk: " + pevnyDisk + " Druhý Disk: " + druhyDisk + " RAM: " + ram;
     }
 }
 

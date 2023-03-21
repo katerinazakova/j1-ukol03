@@ -13,16 +13,17 @@ public class HlavniProgram {
     public static void main(String... args) {
         //TODO tady bude váš kód - vytvoření instance třídy Pocitac, zapnutí, vpynutí, výpis hodnot.
 
-
         Pocitac laptopLenovo = new Pocitac();
         System.out.println(laptopLenovo);
         laptopLenovo.zapniSe();
 
+        Disk laptopLenovoPevnydisk = new Disk();
+        laptopLenovoPevnydisk.setKapacita(477_000_000_000L);
+        laptopLenovoPevnydisk.setVyuziteMisto(201_000_000_000L);
 
-        Disk laptopLenovoDisk = new Disk();
-        laptopLenovoDisk.setKapacita(477_000_000_000L);
-        laptopLenovoDisk.setVyuziteMisto(201_000_000_000L);
-
+        Disk laptopLenovoDruhyDisk = new Disk();
+        laptopLenovoDruhyDisk.setKapacita(400_000_000_000L);
+        laptopLenovoDruhyDisk.setVyuziteMisto(0L);
 
         Pamet laptopLenovoPamet = new Pamet();
         laptopLenovoPamet.setKapacita(8_000_000_000L);
@@ -32,9 +33,9 @@ public class HlavniProgram {
         laptopLenovoProcesor.setRychlost(2_300_000_000L);
 
         laptopLenovo.setCpu(laptopLenovoProcesor);
-        laptopLenovo.setPevnyDisk(laptopLenovoDisk);
+        laptopLenovo.setPevnyDisk(laptopLenovoPevnydisk);
+        laptopLenovo.setDruhyDisk(laptopLenovoDruhyDisk);
         laptopLenovo.setRam(laptopLenovoPamet);
-
 
         System.out.println(laptopLenovo);
         laptopLenovo.zapniSe();
@@ -44,25 +45,47 @@ public class HlavniProgram {
 
         laptopLenovo.vytvorSouborOVelikosti(100_000_000_000L);
         System.out.println(laptopLenovo.getPevnyDisk());
+        System.out.println(laptopLenovo.getDruhyDisk());
 
-        laptopLenovo.vytvorSouborOVelikosti(380_256_000_000L);
+        laptopLenovo.vytvorSouborOVelikosti(255_000_000_000L);
         System.out.println(laptopLenovo.getPevnyDisk());
+        System.out.println(laptopLenovo.getDruhyDisk());
 
-        laptopLenovo.vymazSouboryOVelikosti(100_000_000_000L);
+        laptopLenovo.vytvorSouborOVelikosti(255_000_000_000L);
         System.out.println(laptopLenovo.getPevnyDisk());
+        System.out.println(laptopLenovo.getDruhyDisk());
 
-        laptopLenovo.vytvorSouborOVelikosti(276_000_000_000L);
+        laptopLenovo.vytvorSouborOVelikosti(145_000_000_000L);
         System.out.println(laptopLenovo.getPevnyDisk());
+        System.out.println(laptopLenovo.getDruhyDisk());
 
-        laptopLenovo.vytvorSouborOVelikosti(50_256_000_000L);
+        laptopLenovo.vytvorSouborOVelikosti(145_000_000_000L);
         System.out.println(laptopLenovo.getPevnyDisk());
+        System.out.println(laptopLenovo.getDruhyDisk());
 
-        laptopLenovo.vymazSouboryOVelikosti(478_000_000_000L);
+        laptopLenovo.vymazSouboryOVelikosti(200_000_000_000L);
         System.out.println(laptopLenovo.getPevnyDisk());
+        System.out.println(laptopLenovo.getDruhyDisk());
 
-        laptopLenovo.vymazSouboryOVelikosti(477_000_000_000L);
+        laptopLenovo.vymazSouboryOVelikosti(250_000_000_000L);
         System.out.println(laptopLenovo.getPevnyDisk());
+        System.out.println(laptopLenovo.getDruhyDisk());
 
+        laptopLenovo.vymazSouboryOVelikosti(250_000_000_000L);
+        System.out.println(laptopLenovo.getPevnyDisk());
+        System.out.println(laptopLenovo.getDruhyDisk());
+
+        laptopLenovo.vymazSouboryOVelikosti(246_000_000_000L);
+        System.out.println(laptopLenovo.getPevnyDisk());
+        System.out.println(laptopLenovo.getDruhyDisk());
+
+        laptopLenovo.vymazSouboryOVelikosti(150_000_000_000L);
+        System.out.println(laptopLenovo.getPevnyDisk());
+        System.out.println(laptopLenovo.getDruhyDisk());
+
+        laptopLenovo.vymazSouboryOVelikosti(150_000_000_000L);
+        System.out.println(laptopLenovo.getPevnyDisk());
+        System.out.println(laptopLenovo.getDruhyDisk());
 
         laptopLenovo.vypniSe();
         laptopLenovo.vypniSe();
@@ -70,7 +93,6 @@ public class HlavniProgram {
 
         laptopLenovo.vytvorSouborOVelikosti(100_000_000_000L);
         laptopLenovo.vymazSouboryOVelikosti(100_000_000_000L);
-
 
     }
 
